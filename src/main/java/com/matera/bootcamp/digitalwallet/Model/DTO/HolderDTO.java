@@ -1,37 +1,33 @@
-package com.matera.bootcamp.digitalwallet.Model.Entity;
+package com.matera.bootcamp.digitalwallet.Model.DTO;
 
+import com.matera.bootcamp.digitalwallet.Model.Entity.Account;
+import com.matera.bootcamp.digitalwallet.Model.Entity.Address;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
 @Data
-@Entity
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Holder {
+public class HolderDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;
 
-    @Column(unique = true)
     private String cpfOrCnpj;
 
     private String phone;
 
     private LocalDate brithDate;
 
-    @OneToOne
     private Address address;
 
-    @OneToMany
     private List<Account> accounts;
+
 }
