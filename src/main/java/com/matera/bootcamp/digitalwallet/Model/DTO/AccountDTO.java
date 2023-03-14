@@ -20,6 +20,8 @@ public class AccountDTO {
 
     private int number;
 
+    private String bank;
+
     private BigDecimal balance;
 
     private Holder holder;

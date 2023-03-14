@@ -16,7 +16,7 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String street;
     private String number;
     private String district;
@@ -25,6 +25,6 @@ public class Address {
     private String city;
     private String state;
     private String country;
-    @OneToOne
+    @OneToOne (mappedBy = "address")
     private Holder holder;
 }
